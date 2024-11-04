@@ -1,0 +1,99 @@
+/* Set full-screen background image */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('your-image.jpg.jpg'); /* Replace with your image file */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+  }
+  
+  /* Center the greeting text */
+  .greeting-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  /* Styling for stars */
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .stars::before, .stars::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(2px 2px at 10px 10px, #ffffff, transparent),
+                      radial-gradient(2px 2px at 30px 30px, #ffffff, transparent),
+                      radial-gradient(2px 2px at 50px 50px, #ffffff, transparent),
+                      radial-gradient(2px 2px at 70px 70px, #ffffff, transparent),
+                      radial-gradient(2px 2px at 90px 90px, #ffffff, transparent);
+    background-size: 100px 100px;
+    animation: moveStars 10s linear infinite;
+    opacity: 0.6;
+  }
+  
+  .stars::after {
+    background-position: 50px 50px;
+    animation-duration: 15s;
+    opacity: 0.4;
+  }
+  
+  @keyframes moveStars {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  /* Ensures the greeting content is above the stars */
+  .greeting-container {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    color: #ffffff;
+  }
+  /* Styling for shooting stars */
+.shooting-star {
+    position: absolute;
+    top: -10px; /* Start slightly above the viewport */
+    left: 50%;
+    width: 2px; /* Width of the shooting star */
+    height: 100px; /* Length of the shooting star */
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.8), transparent);
+    transform: rotate(-45deg);
+    animation: shoot 2s ease-in-out infinite;
+    opacity: 0.5; /* Fades out */
+  }
+  
+  /* Shooting star animation */
+  @keyframes shoot {
+    0% {
+      transform: translate(-50px, -50px) rotate(-45deg);
+      opacity: 1; /* Fully visible */
+    }
+    80% {
+      transform: translate(400px, 400px) rotate(-45deg);
+      opacity: 0; /* Fades out */
+    }
+    100% {
+      opacity: 0; /* Ensures it stays invisible after shooting */
+    }
+  }
+  

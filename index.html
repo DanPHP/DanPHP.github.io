@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cedrick Galit</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div> <!-- This is the stars effect -->
+  <div class="shooting-star"></div> <!-- This is the shooting star effect -->
+  <div class="shooting-star" style="animation-delay: 0s;"></div>
+
+<div class="shooting-star" style="animation-delay: 1.5s;"></div>
+
+<div class="shooting-star" style="animation-delay: 3s;"></div>
+
+<div class="shooting-star" style="animation-delay: 4.5s;"></div>
+
+  <div class="greeting-container">
+    <h1>Cedrick Galit</h1>
+    <p>Practice lang</p>
+   
+  </div>
+  
+  
+  <script>
+    const stars = document.querySelectorAll('.shooting-star');
+    stars.forEach(star => {
+      // Generate a random position for each shooting star
+      const randomLeft = Math.random() * 100; // Random left position percentage
+      star.style.left = `${randomLeft}vw`; // Set the left position
+    });
+  </script>
+  
+</body>
+</html>
+  
